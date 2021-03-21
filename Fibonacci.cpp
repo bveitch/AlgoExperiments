@@ -82,11 +82,10 @@ uint64_t fib1(const uint64_t& n){
 
 uint64_t fib2(const uint64_t& n, bool use_cpp = true){
 
-    double golden = (sqrt(5)+1)/2;
+    double golden = (sqrt(5.0)+1)/2;
     double fn;
     if(use_cpp){
         fn  = pow(golden,n);
-        return round(fn/sqrt(5)); 
     }
     else{
         fn = fast_exp(golden,n);
