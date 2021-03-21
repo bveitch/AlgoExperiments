@@ -13,15 +13,15 @@ where,
 
 a_p=Sum_{i=1}^{\infinity} floor(n/p^i)
 
-This ought to be O(n/log(n)) in time and memory. In memory as must first build a prime list via sieving.
+This ought to be O(n/log(n)) in time and memory. In memory because one must first build a list of primes by sieving.
 
 2. Fibonacci numbers.
 
-I hear (and have heard) this often comes upin coding interviews. It can be defined iteratively, 
+I hear (and have heard) this often comes upin coding interviews. It is defined iteratively, 
 
-F[1]=1, F[2]=1,
-
+F[1]=1, 
+F[2]=1,
 F[n+1]=F[n] + F[n-1]
 
-This is O(n) in time using a procedural loop. There are faster ways. the supriose hear was that C++ in built pow function doesnt seem optimum, 
+This is O(n) in time using a procedural loop. There are faster ways. the suprise here was that C++'s in built 'pow' function doesnt seem optimum, 
 so O(log_2 n) running times were missed. A fast powering trick was included for this purpose.
