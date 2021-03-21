@@ -17,7 +17,7 @@ This ought to be O(n/log(n)) in time and memory. In memory because one must firs
 
 2. Fibonacci numbers.
 
-I hear (and have heard) this often comes upin coding interviews. It is defined iteratively, 
+I hear (and have heard) this often comes up in coding interviews. It is defined iteratively, 
 
 F[1]=1, 
 F[2]=1,
