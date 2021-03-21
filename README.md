@@ -5,7 +5,7 @@ Eg:
 1. n!= factorial(n)=n*factorial(n-1)
 
 This defines almost the most basic recursion. But is there a faster way?
-Legendre reliazed that n! can also be expressed,
+Legendre (see Burton, 'Elementary Number Theory' page 116) realized that n! can also be expressed,
 
 n!= Product_{p in primes} p^a_p
 
@@ -23,5 +23,5 @@ F[1]=1,
 F[2]=1,
 F[n+1]=F[n] + F[n-1]
 
-This is O(n) in time using a procedural loop. There are faster ways. the suprise here was that C++'s in built 'pow' function doesnt seem optimum, 
+This is O(n) in time using a procedural loop. There are faster ways, eg, see Wilf, 'GeneratingFunctionology' page 11. the suprise here was that C++'s in built 'pow' function doesnt seem optimum, 
 so O(log_2 n) running times were missed. A fast powering trick was included for this purpose.
