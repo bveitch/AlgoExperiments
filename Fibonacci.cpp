@@ -98,7 +98,6 @@ uint64_t fib3(const uint64_t& n){
     typedef Matrix2x2<int64_t> M2x2;
     M2x2 matrix;
     auto fn_mat  = fast_exp(matrix,n-1);
-    std::cerr << fn_mat(0,0) << std::endl;
     return fn_mat(0,0); 
 
 }
@@ -116,7 +115,8 @@ int main (int argc, char *argv[]) {
 
     cerr << "Dynamic programming loop (should be O(n) time, O(1) mem) ..." <<   std::endl; 
     
-    cerr << "   Fibonacci("<<  N  << ") = " << fn << std::endl;  
+    cerr << "   Fibonacci("<<  N  << ")  = " << fn << std::endl;  
+    
     cerr << "   Runtime was " << duration.count() << " microseconds\n" ;
 
     auto start2 = high_resolution_clock::now();

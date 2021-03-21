@@ -114,8 +114,8 @@ int main (int argc, char *argv[]) {
          std::cerr <<  "'Faster' method was actually  slower" << std::endl;
     }
 
-    cerr << "Runtime (recursion) was " << duration.count() << " seconds\n" ;
-    cerr << "Runtime ('faster' method) was " << duration2.count() << " seconds\n" ;
+    cerr << "Runtime (recursion) was " << duration.count() << " microseconds\n" ;
+    cerr << "Runtime ('faster' method) was " << duration2.count() << " microseconds\n" ;
   
 	return 0;
 }
