@@ -80,20 +80,18 @@ uint64_t fib1(const uint64_t& n){
     return f1;
 }
 
-uint64_t fib2(const uint64_t& n){
+uint64_t fib2(const uint64_t& n, bool use_cpp = true){
 
     double golden = (sqrt(5)+1)/2;
-    auto fn       = pow(golden,n);
+    double fn;
+    if(use_cpp){
+        fn  = pow(golden,n);
+        return round(fn/sqrt(5)); 
+    }
+    else{
+        fn = fast_exp(golden,n);
+    }
     return round(fn/sqrt(5)); 
-
-}
-
-uint64_t fib2_1(const uint64_t& n){
-
-    double golden = (sqrt(5)+1)/2;
-    auto fn       = fast_exp(golden,n);
-    return round(fn/sqrt(5)); 
-
 }
 
 uint64_t fib3(const uint64_t& n){
@@ -138,7 +136,7 @@ int main (int argc, char *argv[]) {
 
     auto start2_1 = high_resolution_clock::now();
 
-    auto fn2_1 = fib2_1(N);
+    auto fn2_1 = fib2(N,false);
     
     auto stop2_1 = high_resolution_clock::now(); 
     
