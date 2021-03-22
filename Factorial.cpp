@@ -3,10 +3,11 @@
 #include <cmath>
 #include <vector>
 #include <gmpxx.h>
+#include <chrono>
+#include "Utilities.hh"
 
 using namespace std;
 using namespace std::chrono; 
-using namespace std::placeholders; 
 
 /**
 Created on Fri Sep 04 2020
@@ -52,14 +53,6 @@ vector<uint64_t> prime_sieve(size_t n)
     return primes;
 }
 
-template<typename T> 
-T fast_exp(T v, unsigned long n){
-	if(n == 0 ) return 1;
-	else if(n == 1 ) return v;
-	else if(n % 2 ==1) return v*fast_exp(v*v,(n-1)/2);
-	else return fast_exp(v*v,n/2 );	
-}
-
 uint64_t faster_factorial(const uint64_t& n , const vector<uint64_t> & primes){
     
     auto fac = 1UL;
@@ -72,7 +65,7 @@ uint64_t faster_factorial(const uint64_t& n , const vector<uint64_t> & primes){
             count+=n/p_exp;
             p_exp*=p;
         }
-        fac*=fast_exp(p,count);
+        fac*=Utilities::fast_exp(p,count);
     }
     return fac;
 }
@@ -86,8 +79,6 @@ int main (int argc, char *argv[]) {
     auto v = factorial(N);
     
     auto stop = high_resolution_clock::now(); 
-  
-    //auto duration = duration_cast<double,std::micro>(stop - start);
     
     std::chrono::duration<double, std::micro> duration = stop - start;
     
